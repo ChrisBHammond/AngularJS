@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <title></title>
+</head>
+<body>
+
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="#">Home</a>
+            <ul class="nav">
+                <li><a ui-sref="VideoGames">VideoGames</a></li>
+                <li><a ui-sref="About">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div>
+
+        <div ui-view></div>
+
+    </div>
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-ui-router.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/VideoGames/VideoGames.Controller.js"></script>
+    <script src="app/about/about.js"></script>
+    <script src="app/home/home.js"></script>
+
+</body>
+</html>
