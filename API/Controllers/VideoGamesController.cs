@@ -19,6 +19,8 @@ namespace API.Controllers
         private APIContext db = new APIContext();
 
         // GET: api/VideoGames
+        [HttpGet]
+        [Route("api/{videoGames}/")]
         public IQueryable<VideoGame> GetVideoGames()
         {
             return repo.GetVideoGames();
@@ -26,6 +28,8 @@ namespace API.Controllers
 
         // GET: api/VideoGames/5
         [ResponseType(typeof(VideoGame))]
+        [HttpGet]
+        [Route("api/{GetVideoGameById}/{id}")]
         public IHttpActionResult GetVideoGame(int id)
         {
 

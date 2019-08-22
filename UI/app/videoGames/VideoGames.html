@@ -1,12 +1,26 @@
 ﻿<div ng-controller="VideoGameController as videoGame">
-    <h1>Hello From Main video Game List.</h1>
+    <h1>Main video Game List.</h1>
 
-    <a ui-sref="VideoGameDetails({id: 3})"> Go to Video Game Detail #3</a>
-    <!--<a ui-sref="partyDetail({ partyID: id, partyLocation: location })">See the Party</a>-->
-    {{videoGame.name}}
-    <ul>
-        <li ng-repeat="game in videoGame.videoGames">
-            {{ game.id + " " + game.Name}} <br>
-        </li>
-    </ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Platform</th>
+            <th scope="col">ESRB Rating</th>
+            <th scope="col">Release Date</th>
+            <th scope="col">Developer</th>
+        </tr>
+    </thead>
+    <tr scope="row" ng-repeat="game in videoGame.videoGames">
+        <td>{{ game.id }}</td>
+        <td><a ui-sref="VideoGameDetails({id: game.id})">{{ game.Name }}</a></td>
+        <td>{{ game.Platform }}</td>
+        <td>{{ game.ESRBRating }}</td>
+        <td>{{ game.ReleaseDate }}</td>
+        <td>{{ game.Developer }}</td>
+    </tr>
+</table>
+
+  
 </div>

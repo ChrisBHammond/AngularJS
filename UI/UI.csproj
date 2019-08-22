@@ -73,6 +73,7 @@
     <Content Include="app\home\home.html" />
     <Content Include="app\home\home.js" />
     <Content Include="app\services\videoGame.service.js" />
+    <Content Include="app\styles\CustomStyles.css" />
     <Content Include="app\videoGames\VideoGame-Detail.html" />
     <Content Include="app\videoGames\VideoGame-Detail.Controller.js" />
     <Content Include="app\videoGames\VideoGames.html" />
