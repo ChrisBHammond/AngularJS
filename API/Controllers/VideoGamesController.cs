@@ -16,7 +16,6 @@ namespace API.Controllers
     public class VideoGamesController : ApiController
     {
         private VideoGameRepository repo = new VideoGameRepository();
-        private APIContext db = new APIContext();
 
         // GET: api/VideoGames
         [HttpGet]
@@ -32,7 +31,6 @@ namespace API.Controllers
         [Route("api/{GetVideoGameById}/{id}")]
         public IHttpActionResult GetVideoGame(int id)
         {
-
             var videoGame = repo.GetVideoGameByID(id);
             if (videoGame == null)
             {
@@ -44,40 +42,14 @@ namespace API.Controllers
 
         // PUT: api/VideoGames/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutVideoGame(int id, VideoGame videoGame)
+        public IHttpActionResult PutVideoGame(VideoGame videoGame)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != videoGame.id)
-            {
-                return BadRequest();
-            }
-
-            repo.updateVideoGame(videoGame);
-            //try
-            //{
-            //    db.SaveChanges();
-            //}
-            //catch (DbUpdateConcurrencyException)
-            //{
-            //    if (!VideoGameExists(id))
-            //    {
-            //        return NotFound();
-            //    }
-            //    else
-            //    {
-            //        throw;
-            //    }
-            //}
-
-            return StatusCode(HttpStatusCode.OK);
+            return StatusCode(HttpStatusCode.NotImplemented);
         }
 
         // POST: api/VideoGames
         [ResponseType(typeof(VideoGame))]
+        [Route("api/{UpdateVideoGame}/")]
         public IHttpActionResult PostVideoGame(VideoGame videoGame)
         {
             if (!ModelState.IsValid)
@@ -85,39 +57,41 @@ namespace API.Controllers
                 return BadRequest(ModelState);
             }
 
-            repo.addVideoGame(videoGame);
+            repo.updateVideoGame(videoGame);
 
-            return CreatedAtRoute("DefaultApi", new { id = videoGame.id }, videoGame);
+            return StatusCode(HttpStatusCode.OK);
         }
 
         // DELETE: api/VideoGames/5
         [ResponseType(typeof(VideoGame))]
         public IHttpActionResult DeleteVideoGame(int id)
         {
-            VideoGame videoGame = db.VideoGames.Find(id);
-            if (videoGame == null)
-            {
-                return NotFound();
-            }
+            //VideoGame videoGame = db.VideoGames.Find(id);
+            //if (videoGame == null)
+            //{
+            //    return NotFound();
+            //}
 
-            db.VideoGames.Remove(videoGame);
-            db.SaveChanges();
+            //db.VideoGames.Remove(videoGame);
+            //db.SaveChanges();
 
-            return Ok(videoGame);
+            //return Ok(videoGame);
+
+            return StatusCode(HttpStatusCode.NotImplemented);
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
+            //if (disposing)
+            //{
+            //    db.Dispose();
+            //}
+            //base.Dispose(disposing);
         }
 
-        private bool VideoGameExists(int id)
-        {
-            return db.VideoGames.Count(e => e.id == id) > 0;
-        }
+        //private bool VideoGameExists(int id)
+        //{
+        //    return db.VideoGames.Count(e => e.id == id) > 0;
+        //}
     }
 }

@@ -1,24 +1,27 @@
-﻿myapp.controller('VideoGameDetailController', ['$stateParams', 'GameStoreService',
-    function ($stateParams, GameStoreService) {
+﻿myapp.controller('VideoGameDetailController', ['$stateParams','$state', 'GameStoreService',
+    function ($stateParams, $state, GameStoreService) {
         var vm = this;
-        vm.name = "Updating";
         vm.videoGame = {};
-        
+
         vm.id = $stateParams.id;
-        
-        console.log($stateParams.id);
 
         GameStoreService.getVideoGameById(vm.id).then(function (data) {
-            console.log(data);
             vm.videoGame = data;
 
             //convert string into date object wonder if this can be down better in html file?
             vm.videoGame.ReleaseDate = new Date(data.ReleaseDate);
-            
         });
 
-        
-        
+        vm.updateVideoGame = function (videoGame) {
+
+            GameStoreService.updateVideoGame(videoGame).then(function (data) {
+
+                //TODO check if video game failed to update
+                $state.go("VideoGames");
+            });
+
+        };
+
     }
 ]);
 

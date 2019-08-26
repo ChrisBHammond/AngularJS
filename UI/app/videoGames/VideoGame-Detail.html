@@ -1,53 +1,43 @@
-﻿<div class="container" ng-controller="VideoGameDetailController as videoGameDetails">
-    <!--   <div>
-           <form class="form-group">
-               <label>Name: <input type="text" ng-model="videoGameDetails.videoGame.Name" /></label><br />
-               <label>E-mail: <input type="email" ng-model="videoGameDetails.videoGamePlatform" /></label><br />
-               Best Editor: <label><input type="radio" ng-model="user.preference" value="vi" />vi</label>-->
-    <!--<label><input type="radio" ng-model="user.preference" value="emacs" />emacs</label><br />
-            <input type="button" ng-click="reset()" value="Reset" />
-            <input type="submit" ng-click="update(user)" value="Save" />
-        </form>
-    </div>-->
+﻿<div class="container p-3" ng-controller="VideoGameDetailController as videoGameDetails">
 
     <h2>Video Game Information:</h2>
-    <form p-5 class="form-horizontal" ng-submit="submitStudnetForm()" role="form">
+    <form p-5 class="form-horizontal" ng-submit="videoGameDetails.updateVideoGame(videoGameDetails.videoGame)" role="form">
         <div class="form-group">
-            <label for="Name" class="col-sm-3 control-label">Name:</label>
+            <label class="col-sm-3 control-label">Name:</label>
             <div class="col-sm-6">
-                <input type="text" id="Name" class="form-control" ng-model="videoGameDetails.videoGame.Name" />
+                <input type="text" class="form-control" ng-model="videoGameDetails.videoGame.Name" />
             </div>
             <div class="col-sm-3"></div>
 
         </div>
         <div class="form-group">
-            <label for="lastName" class="col-sm-3 control-label">ESRBRating:</label>
+            <label class="col-sm-3 control-label">ESRBRating:</label>
             <div class="col-sm-6">
-                <input type="text" id="Platform" class="form-control" ng-model="videoGameDetails.videoGame.ESRBRating" />
+                <input type="text" class="form-control" ng-model="videoGameDetails.videoGame.ESRBRating" />
             </div>
             <div class="col-sm-3"></div>
         </div>
 
         <div class="form-group">
-            <label for="ESRBRating" class="col-sm-3 control-label">Platform:</label>
+            <label class="col-sm-3 control-label">Platform:</label>
             <div class="col-sm-6">
-                <input type="text" id="ESRBRating" class="form-control" ng-model="videoGameDetails.videoGame.Platform" />
+                <input type="text" class="form-control" ng-model="videoGameDetails.videoGame.Platform" />
             </div>
             <div class="col-sm-3"></div>
         </div>
 
         <div class="form-group">
-            <label for="Developer" class="col-sm-3 control-label">Developer</label>
+            <label class="col-sm-3 control-label">Developer</label>
             <div class="col-sm-6">
-                <input type="text" id="Developer" class="form-control" ng-model="videoGameDetails.videoGame.Developer" />
+                <input type="text" class="form-control" ng-model="videoGameDetails.videoGame.Developer" />
             </div>
             <div class="col-sm-3"></div>
         </div>
 
         <div class="form-group">
-            <label for="dob" class="col-sm-3 control-label">Release Date:</label>
+            <label class="col-sm-3 control-label">Release Date:</label>
             <div class="col-sm-6">
-                <input type="date" id="ReleaseDate" class="form-control" ng-model="videoGameDetails.videoGame.ReleaseDate" />
+                <input type="date" class="form-control" ng-model="videoGameDetails.videoGame.ReleaseDate" />
             </div>
             <div class="col-sm-3"></div>
         </div>
@@ -55,7 +45,4 @@
         <input type="submit" value="Save" class="btn btn-primary col-sm-offset-3" />
 
     </form>
-
-
-
 </div>

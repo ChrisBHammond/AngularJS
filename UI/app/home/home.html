@@ -1,7 +1,17 @@
 ﻿<div class="p-3" ng-controller="HomeController as home">
-    <h2>Hello from Home Page!</h2>
+    <h2> {{ home.message }} </h2>
+    
+    <p>
+        Please feel free to look around and browse the list of <a ui-sref="VideoGames">video games.</a>
+    </p>
 
-    {{ home.name }}
-
+    <h3>TODO List:</h3>
+    <ul>
+        <li>Include video game add and delete features.</li>
+        <li>Add project that can hold business Logic.</li>
+        <li>Secure website with SSL</li>
+        <li>Create Login page and secure APIs</li>
+        <li>Add more unit tests as needed.</li>
+    </ul>
 
 </div>

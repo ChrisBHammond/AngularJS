@@ -27,7 +27,6 @@ namespace API.Migrations
             //    );
             //
 
-
             context.VideoGames.AddOrUpdate(
 
                 new Models.VideoGame {
@@ -58,10 +57,6 @@ namespace API.Migrations
                 }
 
                 );
-
-
-
-
         }
     }
 }

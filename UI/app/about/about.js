@@ -1,7 +1,7 @@
 ﻿myapp.controller('AboutController', [
     function () {
         var vm = this;
-        vm.name = "Testing out controller as";
-        vm.things = ["A", "Set", "Of", "Things"];
+        vm.message = "Please find below some of the resources used to create this site.";
+
     }
 ]);

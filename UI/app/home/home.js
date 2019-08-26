@@ -1,7 +1,7 @@
 ﻿myapp.controller('HomeController', [
     function () {
         var vm = this;
-        vm.name = "Testing out Home controller as is";
+        vm.message = "Welcome to the video game store.";
         
     }
 ]);
